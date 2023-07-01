@@ -1,0 +1,39 @@
+body {
+    background-color: #0c0319;
+    color: #FDFDB4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary {
+    background-color: #745296;
+    border-color: #745296;
+    color: #FDFDB4;
+}
+
+.navbar {
+    background-color: #558C8C;
+}
+
+.navbar-brand {
+    color: #FDFDB4;
+}
+
+.navbar-toggler {
+    color: #FDFDB4;
+}
+.nav-link {
+    color: #FDFDB4;
+}
+
+footer {
+    /* background-color: #558C8C; */
+    color: #FDFDB4;
+    padding: 20px 0;
+}
+
+#footer-nav > a {
+    color: #FDFDB4;
+    text-decoration: none;
+    margin-right: 10px;
+}
+

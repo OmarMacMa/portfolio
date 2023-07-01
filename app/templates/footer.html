@@ -1,0 +1,28 @@
+<footer class="text-center">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-auto text-center">
+                <a class="btn text-white btn-floating m-1" href="https://www.linkedin.com/in/omarmacma/" style="background-color: #0082ca;" role="button" target="_blank">
+                    <i class="fa-brands fa-linkedin-in fa-beat-fade fa-xl"></i>
+                </a>
+                <a class="btn text-white btn-floating m-1" href="https://www.github.com/omarmacma" style="background-color: #171515;" role="button" target="_blank">
+                    <i class="fa-brands fa-github fa-beat-fade fa-xl"></i>
+                </a>
+                <a class="btn text-white btn-floating m-1" href="mailto:omarmcmy@gmail.com?subject=Hi%20Omar!" style="background-color: #d14836;" role="button" target="_blank">
+                    <i class="fa-solid fa-envelope fa-beat-fade fa-xl"></i>
+                </a>
+                <span class="btn text-white btn-floating m-1" style="background-color: #25d366; cursor: pointer;" role="button" onclick="showPhoneNumber()">
+                    <i class="fas fa-phone-volume fa-beat-fade fa-xl"></i>
+                </span>
+                <span id="phone-number" class="d-none">+52 33 1178 0556</span>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 1rem;">
+            <div class="col-lg-auto text-center" id="footer-nav">
+                <a href="{{ url_for("index") }}">Omar</a>
+                <a href="{{ url_for("index") }}">Me</a>
+                <a href="{{ url_for("portfolio") }}">Portfolio</a>
+            </div>
+        </div>
+    </div>
+</footer>
