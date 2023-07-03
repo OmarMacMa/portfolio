@@ -24,9 +24,34 @@ body {
 .nav-link {
     color: #FDFDB4;
 }
+.sect {
+    color: #E4BB42;
+}
+
+h1 {
+    color: #78C0E0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+p {
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+#me {
+    min-height: 250px;
+    max-height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+#skills > i {
+    color: #78C0E0;
+    font-size: 3em;
+}
 
 footer {
-    /* background-color: #558C8C; */
     color: #FDFDB4;
     padding: 20px 0;
 }

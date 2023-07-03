@@ -6,14 +6,47 @@
 
 {% block content %}
     {{ super() }}
-    <div class="container" style="margin-top: 50px;">
+    <div class="container py-5">
         <div class="row">
-            <div class="col-md-12">
-                <h1>Me</h1>
-                <p>My name is Omar</p>
+            <div class="col-lg-6 text-lg-start d-flex flex-column justify-content-center">
+                <p class="fw-bold sect">About Me</p>
+                <h1 data-aos="fade-right" data-aos-delay="100">
+                    Hi, I'm Omar</h1>
+                <p data-aos="fade-right" data-aos-delay="200">
+                    Hey there! Omar here, a 20 year old software developer from Mexico. 
+                </p>
+                <p data-aos="fade-right" data-aos-delay="300">
+                    I'm in my junior year, currently studying my 5th semester of Computer Science.
+                </p>
+                <p data-aos="fade-right" data-aos-delay="400">
+                    I'm a passionate learner and I love to challenge myself with new experiences and projects.
+                </p>
+                <p data-aos="fade-right" data-aos-delay="500">
+                    I have strong experience in web development, specifically in the backend, but also with some frontend experience.
+                </p>
             </div>
+            <div class="col-lg-6">
+                <img class="rounded img-fluid shadow mx-auto d-block" id="me" src="{{ url_for('static', filename='img/me.jpg') }}" alt="Me">
         </div>
     </div>
+    <section class="py-2">
+        <div class="container text-center py-5" id="skills" data-aos="zoom-in-up">
+            <p class="mb-4 fw-bold sect text-center">My Skills</p>
+            <i class="fab fa-python m-3" title="Python"></i>
+            <i class="fab fa-php m-3" title="PHP"></i>
+            <i class="fab fa-cuttlefish m-3" title="C++"><b style="font-size: 0.8rem;" class="align-middle">++</b></i>
+            <i class="fab fa-js m-3" title="JavaScript"></i>
+            <i class="fab fa-html5 m-3" title="HTML"></i>
+            <i class="fab fa-git-alt m-3" title="Git"></i>
+            <i class="fab fa-github m-3" title="GitHub"></i>
+            <i class="fab fa-linux m-3" title="Windows Subsystem for Linux"></i>
+            <!--<i class="fab fa-bootstrap m-3" title="Bootstrap"></i>
+            <i class="fas fa-pepper-hot fa-flip-horizontal m-3" title="Flask"></i>-->
+
+        </div>
+    </section>
+
+
 {% endblock %}
 {% block footer %}
     {{ super() }}
