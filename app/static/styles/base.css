@@ -34,6 +34,12 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+    color: #78C0E0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
 p {
     text-align: justify;
     font-size: 1.1em;
@@ -48,6 +54,11 @@ p {
 
 #skills > i {
     color: #78C0E0;
+    font-size: 3em;
+}
+
+.funs {
+    color: #745296;
     font-size: 3em;
 }
 
