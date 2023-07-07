@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block head %}
+    {{ super() }}
+    <title>404 | Not found</title>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <div class="container">
+        <div class="stars">
+            <div class="central-body py-5 text-center">
+                <h1 style="font-size: 10em">404</h1>
+                <h2>Page not found</h2>
+                <a class="btn btn-primary btn-lg mt-3 mb-3" href="{{ url_for('index') }}">Go back to home</a>
+            </div>
+            <div class="glowing_stars">
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+                <div class="star"></div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block footer %}
+    {{ super() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}
