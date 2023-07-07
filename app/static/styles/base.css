@@ -1,4 +1,5 @@
 body {
+    background: url('/static/img/stars.svg');
     background-color: #0c0319;
     color: #FDFDB4;
     font-family: 'Poppins', sans-serif;
