@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/experience.css') }}">
+    <title>My experience</title>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <section class="py-5">
+        <div class="container py-2">
+            <div class="row">
+                <h2 class="text-center mb-3"><i class="fas fa-briefcase"></i> Experience</h2>
+                <div class="col-lg-6 px-3 my-4">
+                    <div class="card rounded-3" data-aos="flip-right" data-aos-delay="150">
+                        <div class="card-body">
+                            <img class="mx-auto d-block w-75" bs-cut="1" src="{{ url_for('static', filename='img/MLH.svg') }}" alt="MLH logo">
+                            <h4 class="card-title mt-3">Site Reliability Engineer Fellow</h4>
+                            <h5 class="card-subtitle">June 2023 - Present</h5>
+                            <ul class="card-text mt-3">
+                                <li>Programming Flask-based website with professional Git and GitHub workflow implementing Jinja templates</li>
+                                <li>Automating and improving tasks through scripting in Bash and Python to enhance efficiency</li>
+                                <li>Employing a basic CI/CD pipeline for deploying on DigitalOcean droplets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 px-3 my-4">
+                    <div class="card rounded-3" data-aos="flip-right" data-aos-delay="150">
+                        <div class="card-body">
+                            <img class="mx-auto d-block w-75" bs-cut="1" src="{{ url_for('static', filename='img/usi.png') }}" alt="USI logo">
+                            <h4 class="card-title mt-3">Software Engineer Intern</h4>
+                            <h5 class="card-subtitle">March 2023 - June 2023</h5>
+                            <ul class="card-text mt-3">
+                                <li>Developed Back End systems with PHP to handle overtime requests and approvals for 2000+ employees</li>
+                                <li>Designed Front End interfaces with HTML and JavaScript to graphically display and manage 6000+ monthly requests</li>
+                                <li>Reduced reports loading time from 10 to 3 seconds and improved query performance by 60-70% through optimized queries</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+{% block footer %}
+    {{ super() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}
