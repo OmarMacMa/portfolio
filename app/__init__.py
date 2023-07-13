@@ -57,9 +57,9 @@ def portfolio():
 
 @app.route("/api/time_line_post", methods=["POST"])
 def post_time_line_post():
-    name = request.form["name"]
-    email = request.form["email"]
-    content = request.form["content"]
+    name = request.form["timeline-name"]
+    email = request.form["timeline-email"]
+    content = request.form["timeline-content"]
     time_line_post = TimeLinePost.create(name=name, email=email, content=content)
     return model_to_dict(time_line_post)
 
@@ -80,3 +80,8 @@ def delete_time_line_post():
     post = TimeLinePost.get_by_id(post_id)
     TimeLinePost.delete_by_id(post_id)
     return model_to_dict(post)
+
+
+@app.route("/timeline")
+def timeline():
+    return render_template("timeline.html")
