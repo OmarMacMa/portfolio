@@ -74,3 +74,7 @@ footer {
     margin-right: 10px;
 }
 
+.form-control {
+    background-color: #FDFDB4;
+    color: #745296;
+}

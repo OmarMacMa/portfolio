@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/timeline.css') }}">
+    <title>Timeline</title>
+{% endblock %}
+
+{% block content %}
+    {{ super() }}
+    <section class="py-3">
+        <div class="container py-3">
+            <p class="fw-bold sect"><i class="fa regular fa-code-pull-request"></i> Upload a timeline post</p>
+            <form id="timeline-form">
+                <div class="row mb-2">
+                    <div class="col-lg-3 col-md-6 col-sm-6 py-2">
+                        <div class="form-group">
+                            <label class="form-label" for="timeline-name">Name:</label>
+                            <input class="form-control" type="text" id="timeline-name" name="timeline-name" />
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 py-2">
+                        <div class="form-group">
+                            <label class="form-label" for="timeline-email">Email:</label>
+                            <input class="form-control" type="email" id="timeline-email" name="timeline-email" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4 py-2">
+                        <div class="form-group">
+                            <label class="form-label" for="timeline-content">Content:</label>
+                            <textarea class="form-control" rows="2" id="timeline-content" name="timeline-content"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 py-3 d-flex align-items-center justify-content-center">
+                        <button class="btn btn-primary" type="button" onclick="postTimeline()">Post timeline</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <section class="py-4">
+        <div class="container px-4" id="timeline-container"></div>
+    </section>
+{%endblock%}
+{% block footer %}
+    {{ super() }}
+{% endblock %}
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/timeline.js') }}"></script>
+    <script type="text/javascript">
+        getTimeline();
+    </script>
+{% endblock %}
