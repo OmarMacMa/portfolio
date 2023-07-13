@@ -26,7 +26,7 @@ class TimeLinePost(Model):
     name = CharField()
     email = CharField()
     content = TextField()
-    created_at = DateTimeField(default=datetime.datetime.now )
+    created_at = DateTimeField(default=datetime.datetime.now)
 
     class Meta:
         database = mydb
@@ -34,6 +34,7 @@ class TimeLinePost(Model):
 
 mydb.connect()
 mydb.create_tables([TimeLinePost])
+
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -55,12 +56,19 @@ def portfolio():
     return render_template("portfolio.html")
 
 
+@app.route("/timeline")
+def timeline():
+    return render_template("timeline.html")
+
+
+# API Endpoints
 @app.route("/api/time_line_post", methods=["POST"])
 def post_time_line_post():
     name = request.form["timeline-name"]
     email = request.form["timeline-email"]
     content = request.form["timeline-content"]
-    time_line_post = TimeLinePost.create(name=name, email=email, content=content)
+    time_line_post = TimeLinePost.create(
+        name=name, email=email, content=content)
     return model_to_dict(time_line_post)
 
 
@@ -80,8 +88,3 @@ def delete_time_line_post():
     post = TimeLinePost.get_by_id(post_id)
     TimeLinePost.delete_by_id(post_id)
     return model_to_dict(post)
-
-
-@app.route("/timeline")
-def timeline():
-    return render_template("timeline.html")

@@ -51,3 +51,53 @@ function postTimeline(){
         }
     })
 }
+
+function getTimeline(){
+    var timelineContainer = document.getElementById("timeline-container");
+    $.ajax({
+        url: '/api/time_line_post',
+        type: 'GET',
+        success: function(data, status, xhr) {
+            if (xhr.status == 200){
+                var timeline = data["time_line_posts"]
+                console.log(timeline);
+                var timeline_html = '<p class="fw-bold sect mb-4"><i class="fa regular fa-code-fork"></i> Timeline</p>';
+                for (var i = 0; i < timeline.length; i++){
+                    if (i % 2 == 0) {
+                        timeline_html += 
+                        "<div class='row'>\
+                            <div class='col-lg-6 col-md-6 py-2' data-aos='fade-up' data-aos-duration='1000'>\
+                                <div class='card'>\
+                                    <div class='card-body'>\
+                                        <h5 class='card-title'>" + timeline[i]["content"] + "</h5>\
+                                        <p class='card-text'>" + timeline[i]["name"] + " - " + timeline[i]["email"] + "</p>\
+                                        <p class='card-subtitle mb-2'>" + timeline[i]["created_at"] + "</p>\
+                                    </div>\
+                                </div>\
+                            </div><div class='col'></div>\
+                        </div>"
+                        
+                    } else {
+                        timeline_html += 
+                        "<div class='row'>\
+                            <div class='col'></div>\
+                            <div class='col-lg-6 col-md-6 py-2' data-aos='fade-up' data-aos-duration='1000'>\
+                                <div class='card'>\
+                                    <div class='card-body'>\
+                                    <h5 class='card-title'>" + timeline[i]["content"] + "</h5>\
+                                    <p class='card-text'>" + timeline[i]["name"] + " - " + timeline[i]["email"] + "</p>\
+                                    <p class='card-subtitle mb-2'>" + timeline[i]["created_at"] + "</p>\
+                                    </div>\
+                                </div>\
+                            </div>\
+                        </div>"
+                    }
+                }
+                timelineContainer.innerHTML = timeline_html;
+            }
+        },
+        error: function(xhr, status, error) {
+            console.log(error);
+        }
+    });
+}

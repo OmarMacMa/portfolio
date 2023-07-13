@@ -1,0 +1,23 @@
+.form-label {
+    color: #558C8C;
+}
+
+
+.card {
+    background-color: #FDFDB4;
+    color: #2A173C;
+    border-color: #745296;
+    border-width: 2px;
+}
+
+.card-title {
+    color: #558C8C;
+}
+
+.card-body {
+    color: #2A173C;
+}
+
+.card-subtitle {
+    color: #745296;
+}
