@@ -60,7 +60,6 @@ function getTimeline(){
         success: function(data, status, xhr) {
             if (xhr.status == 200){
                 var timeline = data["time_line_posts"]
-                console.log(timeline);
                 var timeline_html = '<p class="fw-bold sect mb-4"><i class="fa regular fa-code-fork"></i> Timeline</p>';
                 for (var i = 0; i < timeline.length; i++){
                     if (i % 2 == 0) {
