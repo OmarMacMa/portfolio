@@ -43,22 +43,22 @@ def page_not_found(e):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", title="MLH Fellow")
 
 
 @app.route("/experience")
 def experience():
-    return render_template("experience.html")
+    return render_template("experience.html", title="Experience")
 
 
 @app.route("/portfolio")
 def portfolio():
-    return render_template("portfolio.html")
+    return render_template("portfolio.html", title="Portfolio")
 
 
 @app.route("/timeline")
 def timeline():
-    return render_template("timeline.html")
+    return render_template("timeline.html", title="Timeline")
 
 
 # API Endpoints
