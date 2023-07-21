@@ -68,11 +68,27 @@ def timeline():
 # API Endpoints
 @app.route("/api/time_line_post", methods=["POST"])
 def post_time_line_post():
+    #Validate name
+    if not request.form.get('timeline-name') or request.form['timeline-name'] == "":         
+        return {"error": "Invalid name"}, 400
+    
+    #Validate email
+    import re
+    regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9]+\.[A-Z|a-z]{2,}\b'
+    if not request.form.get('timeline-email') or request.form['timeline-email'] == "" or not re.fullmatch(regex, request.form['timeline-email']):
+        return {"error": "Invalid email"}, 400
+    
+    #Validate content
+    if not request.form.get('timeline-content') or request.form['timeline-content'] == "":
+        return {"error": "Invalid content"}, 400    
+    
     name = request.form["timeline-name"]
     email = request.form["timeline-email"]
     content = request.form["timeline-content"]
+
     time_line_post = TimeLinePost.create(
         name=name, email=email, content=content)
+    
     return model_to_dict(time_line_post)
 
 
