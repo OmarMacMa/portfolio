@@ -11,14 +11,18 @@ load_dotenv()
 
 app = Flask(__name__)
 
-
-mydb = MySQLDatabase(
-    database=os.getenv("MYSQL_DB"),
-    user=os.getenv("MYSQL_USER"),
-    password=os.getenv("MYSQL_PASSWORD"),
-    host=os.getenv("MYSQL_HOST"),
-    port=3306,
-)
+#Set up im-memory SQLite Db for testing, otherwise use MySQL
+if os.getenv("TESTING") == "true":
+    print("Running in test mode")
+    mydb = SqliteDatabase('file:memory?mode=memory&cache=shared',uri=True)
+else:
+    mydb = MySQLDatabase(
+        database=os.getenv("MYSQL_DB"),
+        user=os.getenv("MYSQL_USER"),
+        password=os.getenv("MYSQL_PASSWORD"),
+        host=os.getenv("MYSQL_HOST"),
+        port=3306,
+    )
 print(mydb)
 
 
