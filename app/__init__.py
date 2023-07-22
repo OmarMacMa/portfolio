@@ -47,7 +47,7 @@ def page_not_found(e):
 
 @app.route("/")
 def index():
-    return render_template("index.html", title="MLH Fellow")
+    return render_template("index.html", title="Me")
 
 
 @app.route("/experience")
