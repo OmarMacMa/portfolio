@@ -1,4 +1,4 @@
 #!/bin/bash
 
 
-$PWD/venv/bin/python -m unittest discover -v tests/
+~/.virtualenvs/mlh-flask/bin/python -m unittest discover -v tests/
