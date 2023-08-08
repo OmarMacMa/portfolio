@@ -17,7 +17,7 @@ if os.getenv("TESTING") == "true":
     mydb = SqliteDatabase('file:memory?mode=memory&cache=shared',uri=True)
 else:
     mydb = MySQLDatabase(
-        database=os.getenv("MYSQL_DB"),
+        database=os.getenv("MYSQL_DATABASE"),
         user=os.getenv("MYSQL_USER"),
         password=os.getenv("MYSQL_PASSWORD"),
         host=os.getenv("MYSQL_HOST"),
@@ -47,7 +47,7 @@ def page_not_found(e):
 
 @app.route("/")
 def index():
-    return render_template("index.html", title="MLH Fellow")
+    return render_template("index.html", title="Me")
 
 
 @app.route("/experience")
@@ -94,12 +94,10 @@ def post_time_line_post():
 
 @app.route("/api/time_line_post", methods=["GET"])
 def get_time_line_post():
-    return {
-        "time_line_posts": [
-            model_to_dict(p)
-            for p in TimeLinePost.select().order_by(TimeLinePost.created_at.desc())
-        ]
-    }
+    time_line_posts =[]
+    for post in TimeLinePost.select().order_by(TimeLinePost.created_at.desc()):
+        time_line_posts.append(model_to_dict(post))
+    return {"time_line_posts": time_line_posts}
 
 
 @app.route("/api/time_line_post", methods=["DELETE"])
