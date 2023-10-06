@@ -15,7 +15,7 @@ My own portfolio website, part of my MLH Fellowship experience.
 
 This is my portfolio website, part of the Site Reliability Engineering track at [MLH Fellowship](https://fellowship.mlh.io/) Summer 2023. In this project, I am able to put my skills into practice and learn new ones by exploring what it means to be a Site Reliability Engineer. I am also able to learn about the different tools and technologies that are used in the industry.
 
-The website is deployed on a DigitalOcean droplet using Docker and Nginx. The CI/CD pipeline is implemented using GitHub Actions. The website is available at [https://www.omarmacma.duckdns.org/](https://www.omarmacma.duckdns.org/). And it looks like this:
+The website is deployed on a DigitalOcean droplet using Docker and Nginx. The CI/CD pipeline is implemented using GitHub Actions. And it looks like this:
 
 ![Portfolio website](./images/portfolio.png)
 
